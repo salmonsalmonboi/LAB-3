@@ -1,3 +1,45 @@
 # LAB-3.1
 66543206088-7 นายศุภกร ศิริเมืองมูล
 
+#include <stdio.h>
+
+struct student {
+    char name[ 20 ] ;
+    int age ;
+    char sex ;
+    float gpa ;
+} ;
+
+void upgrade( struct student child ) ;
+
+int main() {
+    struct student aboy ;
+    struct student agirl ;
+    
+    aboy.sex = 'M' ;
+    aboy.gpa = 3.00 ;
+    agirl.sex = 'W' ;
+    agirl.gpa = 3.00 ;
+    
+   	upgrade( aboy ) ;
+   	upgrade( agirl ) ;
+    
+    printf( "GPA[M] = %.2f \n", aboy.gpa ) ;
+    printf( "GPA[W] = %.2f", agirl.gpa ) ;
+    return 0 ;
+}//end function
+
+void upgrade( struct student child ) {
+
+    if ( child.sex == 'M' ) {
+    	
+    //Increase GPA by 10% for men//
+    	child.gpa = child.gpa * ( 1 + 10 / 100.0 ) ;
+        
+    } else if ( child.sex == 'W' ) {
+    	
+    //Increase GPA by 20% for women//
+        child.gpa = child.gpa * ( 1 + 20 / 100.0 ) ;
+    }//end if
+    	printf( "Upgrade GPA = %.2f \n", child.gpa ) ;
+}//end function
