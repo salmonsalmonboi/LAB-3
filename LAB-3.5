@@ -1,0 +1,38 @@
+#LAB-3.5
+66543206088-7 นายศุภกร ศิริเมืองมูล
+
+#include <stdio.h>
+
+struct student ( *GetStudent ( int *room ) )[ 10 ] ;
+
+struct student { 
+  char name[ 50 ] ;
+  
+} ;
+
+int main() {
+	struct student ( *children )[ 10 ] ;	
+	int group ;
+	
+	children = GetStudent( &group ) ;
+	
+	delete []children ;
+	
+	return 0 ;
+	}//end function
+
+struct student ( *GetStudent ( int *room ) )[ 10 ] {
+    printf("room = ") ;
+    scanf( "%d", &(*room) ) ;
+    
+    struct student (*std)[10] = new struct student[*room][10];
+
+    for(int j = 0 ; j < *room ; j++ ) {
+        printf( "Enter student room %d\n", j + 1 ) ;
+        for( int i = 0 ; i <  10 ; i++ ) {
+            printf( "Student[%d] =", i + 1 ) ;
+            scanf( " %s", &std[j][i] ) ;
+        }//end for
+    }//end for
+    return std ;
+}//end function
