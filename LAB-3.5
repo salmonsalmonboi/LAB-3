@@ -25,7 +25,7 @@ struct student ( *GetStudent ( int *room ) )[ 10 ] {
     printf("room = ") ;
     scanf( "%d", &(*room) ) ;
     
-    struct student (*std)[10] = new struct student[*room][10];
+    struct student (*std)[10] = new struct student[*room][10] ;
 
     for(int j = 0 ; j < *room ; j++ ) {
         printf( "Enter student room %d\n", j + 1 ) ;
